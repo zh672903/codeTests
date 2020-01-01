@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace console.main.基础知识
 {
+    /// <summary>
+    /// 继承/抽象类/接口
+    /// </summary>
     class PolymorphicTest
     {
         static void Main(string[] args)

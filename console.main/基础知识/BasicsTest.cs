@@ -106,7 +106,7 @@ namespace console.main.基础知识
             #region is运算符
             //object o = "abc";
             //if (o is string) //执行第一次类型兼容性检查
-            //{
+            //{ 
             //    string s = (string)o; //执行第二次类型兼容性检查，并转换
             //    Console.WriteLine("转换成功！");
             //}
