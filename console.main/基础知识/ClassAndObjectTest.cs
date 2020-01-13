@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace console.main.基础知识
 {
-    class ClasseAndObject
+    class ClassAndObjectTest
     {
         static void Main(string[] args)
         {
             #region 类的实例方法调用
-            //Test test = new Test();
-            //test.Show();
+            //ClassAndObjectTest ClassAndObjectTest = new ClassAndObjectTest();
+            //ClassAndObjectTest.Show();
             #endregion
 
             #region 类的静态方法调用
-            //Test.Show2();
+            //ClassAndObjectTest.Show2();
             #endregion
 
             #region 给方法传递参数,不加ref/out默认都是按值传递
@@ -108,14 +108,14 @@ namespace console.main.基础知识
         }
     }
 
-    class Test
+    class ClassAndObject
     {
         /// <summary>
         /// 实例方法
         /// </summary>
         public void Show()
         {
-            Console.WriteLine("Test下实例方法");
+            Console.WriteLine("ClassAndObjectTest下实例方法");
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace console.main.基础知识
         /// </summary>
         public static void Show2()
         {
-            Console.WriteLine("Test下静态方法");
+            Console.WriteLine("ClassAndObjectTest下静态方法");
         }
     }
 }
