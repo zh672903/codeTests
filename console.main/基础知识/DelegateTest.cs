@@ -141,5 +141,58 @@ namespace console.main.基础知识
         //    }
         //}
         #endregion
+
+        #region 委托的陷阱
+        //static void Main(string[] args)
+        //{
+        //    // 源码
+        //    //List<Action> list = new List<Action>();
+        //    //for (int i = 0; i < 5; i++)
+        //    //{
+        //    //    Action t = () => Console.WriteLine(i.ToString());
+        //    //    list.Add(t);
+        //    //}
+        //    //foreach (Action t in list)
+        //    //{
+        //    //    t();
+        //    //}
+
+        //    //修改后的源码
+        //    //List<Action> list = new List<Action>();
+        //    //for (int i = 0; i < 5; i++)
+        //    //{
+        //    //    int temp = i;
+        //    //    Action t = () => Console.WriteLine(temp.ToString());
+        //    //    list.Add(t);
+        //    //}
+        //    //foreach (Action t in list)
+        //    //{
+        //    //    t();
+        //    //}
+
+        //    //// IL反编译后
+        //    //List<Action> list = new List<Action>();
+        //    //TempClass tempClass = new TempClass();
+        //    //for (tempClass.i = 0; tempClass.i < 5; tempClass.i++)
+        //    //{
+        //    //    Action t = tempClass.TempFunc;
+        //    //    list.Add(t);
+        //    //}
+        //    //foreach (Action t in list)
+        //    //{
+        //    //    t();
+        //    //}
+        //    Console.ReadLine();
+        //    Console.ReadKey();
+        //}
+        //public class TempClass
+        //{
+        //    public int i;
+        //    public void TempFunc()
+        //    {
+        //        Console.WriteLine(i.ToString());
+        //    }
+        //}
+        #endregion
     }
 }
