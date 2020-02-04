@@ -194,5 +194,96 @@ namespace console.main.基础知识
         //    }
         //}
         #endregion
+
+
+        #region 事件
+        #region 一般处理
+        //static void Main(string[] args)
+        //{
+        //    Mum mum = new Mum();            
+        //    mum.MealisReady();
+        //    Console.ReadKey();
+        //}
+
+        //public class Mum
+        //{
+        //    /// <summary>
+        //    /// 饭做好了
+        //    /// </summary>
+        //    public void MealisReady()
+        //    {
+        //        Son son = new Son();
+        //        Father father = new Father();
+        //        son.Eat();
+        //        father.Eat();
+        //    }
+        //}
+
+        ///// <summary>
+        ///// 大儿子
+        ///// </summary>
+        //public class Son
+        //{
+        //    public void Eat()
+        //    {
+        //        Console.WriteLine("打完游戏就过来");
+        //    }
+        //}
+
+        ///// <summary>
+        ///// 孩子他爹
+        ///// </summary>
+        //public class Father
+        //{
+        //    public void Eat()
+        //    {
+        //        Console.WriteLine("看完电视就过来");
+        //    }
+        //}
+        #endregion
+
+        #region 使用委托
+        static void Main(string[] args)
+        {
+            Mum mum = new Mum();
+
+            mum.mealisReadyEvent += new Son().Eat;
+            mum.mealisReadyEvent += new Father().Eat;
+            mum.MealisReady();
+
+            Console.ReadKey();
+        }
+
+
+        public class Mum
+        {
+            public event Action mealisReadyEvent;
+
+            /// <summary>
+            /// 饭做好了
+            /// </summary>
+            public void MealisReady()
+            {
+                mealisReadyEvent?.Invoke();
+            }
+        }
+
+        public class Son
+        {
+            public void Eat()
+            {
+                Console.WriteLine("打完游戏就过来");
+            }
+        }
+
+        public class Father
+        {
+            public void Eat()
+            {
+                Console.WriteLine("看完电视就过来");
+            }
+        }
+        #endregion
+        #endregion
     }
 }
